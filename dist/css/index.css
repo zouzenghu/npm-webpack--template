@@ -1,0 +1,6 @@
+body {
+  color: red;
+  background: image("../../static/timg.jpg");
+  font-family: 'AdobeGothicStd-Bold';
+  src: url(font/test.woff) format("truetype"); }
+

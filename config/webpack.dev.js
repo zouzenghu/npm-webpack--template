@@ -4,6 +4,7 @@ const common = require('./webpack.common');
 const dev = require('../buildConfig/dev.env');
 module.exports = merge(common, {
   mode: 'development',
+  devtool: dev.devtool,
   devServer: Object.assign({
     port: '8080',
     hot: true,

@@ -1,14 +1,25 @@
-const path = require('path')
+const path = require('path');
 const {
   CleanWebpackPlugin
-} = require('clean-webpack-plugin')
-const common = require('./webpack.common')
-const merge = require('webpack-merge')
-const prod = require('../buildConfig/prod.env')
+} = require('clean-webpack-plugin');
+const common = require('./webpack.common');
+const merge = require('webpack-merge');
+const prod = require('../buildConfig/prod.env');
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = merge(common, {
   mode: 'production',
   output: prod.output,
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [new CleanWebpackPlugin(), new OptimizeCssAssetsWebpackPlugin({
+    assetNameRegExp: /\.css$/g,
+    cssProcessor: require('cssnano'),
+    cssProcessorOptions: {
+      safe: true,
+      discardComments: {
+        removeAll: true
+      }
+    },
+    canPrint: true
+  })],
   optimization: {
     usedExports: true,
     splitChunks: Object.assign({

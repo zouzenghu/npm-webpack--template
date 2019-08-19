@@ -1,4 +1,4 @@
-let fun = () => {
-  console.log("哈哈")
-}
-fun();
+import
+fun
+from './components/index'
+fun()

@@ -10,11 +10,6 @@ module.exports = {
       filename: './css/[name].css',
       chunkFilename: '/css/[id].css'
     }, config.css)),
-    // new copyWePackPlugin([Object.assign({
-    //   from: 'static',
-    //   to: 'dist/static',
-    //   ignore: ['.*']
-    // }, config.static)])
   ].concat(createHtml),
   module: {
     rules: [{

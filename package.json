@@ -9,7 +9,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --env=dev",
-    "build": "webpack --env=prod"
+    "build": " webpack --env=prod ",
+    "dev-build": "webpack --profile --json > stats.json --env=prod"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
   },
   "homepage": "https://github.com/zouzenghu/npm-webpack-es6-template#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "autoprefixer": "^9.6.1",
     "clean-css": "^4.1.11",
     "clean-webpack-plugin": "^3.0.0",
@@ -42,5 +45,8 @@
     "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "jquery": "^3.4.1"
+  }
 }

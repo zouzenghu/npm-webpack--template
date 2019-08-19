@@ -1,11 +1,11 @@
-const path = require('path');
+const path = require('path')
 const {
   CleanWebpackPlugin
-} = require('clean-webpack-plugin');
-const common = require('./webpack.common');
-const merge = require('webpack-merge');
-const prod = require('../buildConfig/prod.env');
-const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+} = require('clean-webpack-plugin')
+const common = require('./webpack.common')
+const merge = require('webpack-merge')
+const prod = require('../buildConfig/prod.env')
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin")
 module.exports = merge(common('prod'), {
   mode: 'production',
   output: prod.output,

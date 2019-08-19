@@ -1,8 +1,8 @@
-const MinCssExtractPlugin = require("mini-css-extract-plugin");
-const CreateHtml = require('../buildConfig/utils/template');
-const dev = require('../buildConfig/dev.env');
+const MinCssExtractPlugin = require("mini-css-extract-plugin")
+const CreateHtml = require('../buildConfig/utils/template')
+const dev = require('../buildConfig/dev.env')
 const prod = require('../buildConfig/prod.env')
-const entry = require('../buildConfig/entry').entry;
+const entry = require('../buildConfig/entry').entry
 module.exports = function common(env) {
   return {
     entry,

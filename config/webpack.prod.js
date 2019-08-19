@@ -9,7 +9,7 @@ const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plug
 module.exports = merge(common, {
   mode: 'production',
   output: prod.output,
-  plugins: [new CleanWebpackPlugin(), new OptimizeCssAssetsWebpackPlugin({
+  plugins: [new OptimizeCssAssetsWebpackPlugin({
     assetNameRegExp: /\.css$/g,
     cssProcessor: require('cssnano'),
     cssProcessorOptions: {

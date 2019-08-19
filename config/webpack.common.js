@@ -1,22 +1,25 @@
-const minCssExtractPlugin = require("mini-css-extract-plugin");
-const copyWePackPlugin = require('copy-webpack-plugin');
-const createHtml = require('../buildConfig/utils/template');
+const path = require('path');
+const MinCssExtractPlugin = require("mini-css-extract-plugin");
+const CreateHtml = require('../buildConfig/utils/template');
 const config = require('../buildConfig/config');
 const entry = require('../buildConfig/entry').entry;
+const webpack = require('webpack');
 module.exports = {
   entry,
   plugins: [
-    new minCssExtractPlugin(Object.assign({
+    new MinCssExtractPlugin(Object.assign({
       filename: './css/[name].css',
       chunkFilename: '/css/[id].css'
     }, config.css)),
-  ].concat(createHtml),
+
+
+  ].concat(CreateHtml),
   module: {
     rules: [{
         test: /\.(sc|sa|c)ss$/,
         exclude: /node_modules/,
         use: [{
-            loader: minCssExtractPlugin.loader
+            loader: MinCssExtractPlugin.loader
           },
           {
             loader: 'css-loader',

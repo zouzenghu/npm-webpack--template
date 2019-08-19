@@ -11,7 +11,8 @@
     "start": "webpack-dev-server --env=dev",
     "prebuild": "npx eslint src",
     "build": " webpack --env=prod ",
-    "dev-build": "webpack --profile --json > stats.json --env=prod"
+    "dev-build": "webpack --profile --json > stats.json --env=prod",
+    "build-dll": "webpack --config ./config/webpack.dll.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "add-asset-html-webpack-plugin": "^3.1.3",
     "autoprefixer": "^9.6.1",
     "clean-css": "^4.1.11",
     "clean-webpack-plugin": "^3.0.0",
@@ -36,6 +38,7 @@
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "lodash": "^4.17.15",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",

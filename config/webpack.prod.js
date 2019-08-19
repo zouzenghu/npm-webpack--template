@@ -6,7 +6,7 @@ const common = require('./webpack.common');
 const merge = require('webpack-merge');
 const prod = require('../buildConfig/prod.env');
 const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
-module.exports = merge(common, {
+module.exports = merge(common('prod'), {
   mode: 'production',
   output: prod.output,
   plugins: [new OptimizeCssAssetsWebpackPlugin({
@@ -20,6 +20,16 @@ module.exports = merge(common, {
     },
     canPrint: true
   })],
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      include: path.join(process.cwd(), "src"),
+      use: [{
+        loader: "babel-loader"
+      }]
+    }]
+  },
   optimization: {
     usedExports: true,
     splitChunks: Object.assign({

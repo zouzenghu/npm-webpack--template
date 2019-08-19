@@ -1,26 +1,26 @@
 const path = require('path');
 module.exports = {
   output: {
-    filename: './js/[name].js',
+    filename: './js/[name].[contenthash:6].js',
     path: path.join(process.cwd(), 'dist'),
     chunkFilename: "./class/[name].js"
   },
-  devServer: {
-    port: '8080',
-    hot: true,
-    host: '127.0.0.1',
-    open: true,
-    contentBase: path.join(process.cwd(), 'dist')
+  css: {
+    filename: './css/[name].[contenthash:6].css',
+    chunkFilename: '/css/[id].css'
   },
-  module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      include: path.join(process.cwd(), "src"),
-      use: [{
-        loader: "babel-loader"
-      }]
-    }]
+  image: {
+    outputPath: './image',
+    name: '[name].[contenthash:6].[ext]',
+    limit: '2048'
+  },
+  html: {
+    attrs: ["img:src", "img:data-src", "audio:src"],
+    minimize: true
+  },
+  font: {
+    outputPath: './font',
+    name: "[name].[contenthash:6].[ext]"
   },
   splitChunks: {
     chunks: 'all',

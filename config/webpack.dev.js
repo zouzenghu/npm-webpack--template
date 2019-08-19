@@ -2,7 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const dev = require('../buildConfig/dev.env');
-module.exports = merge(common, {
+module.exports = merge(common('dev'), {
   mode: 'development',
   devtool: dev.devtool,
   devServer: Object.assign({

@@ -40,10 +40,10 @@ html
 
 #### 生成项目依赖图
 
-可使用该[网站](https://webpack.github.io/analyse/)查看
+可使用该[网站](https://webpack.github.io/analyse/)查看  stats.json
 
 ```javascript
-npm run dev-build
+npm run dev-build  
 ```
 
 #### 使用 dll 打包
